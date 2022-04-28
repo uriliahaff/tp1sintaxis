@@ -15,9 +15,18 @@ int longCadena(char cadena[])
 //B) Convertir una cadena de dígitos en su equivalente numérico.
 int cadEnEquiNum(char cadena[])
 {
-    return cadena;
-}
-
+    int i = 0;
+    int numero = 0;
+    int cadenaNumero[100];
+    while(cadena[i] != '\0'){
+        if(cadena[i]>= '0' && cadena[i]<= '9'){
+            cadenaNumero[i] = cadena[i]- 48;
+            numero = (10*numero) + cadenaNumero[i];
+        }
+        i++;
+    }
+    return numero;
+} 
 //C) Convertir una cadena de caracteres a la misma cadena con todos sus caracteres en mayúscula.
 
 char convertirMayus (char cadena[]){
@@ -95,8 +104,13 @@ int main()
 
 
     //Prueba Punto b)
-    equiCad = cadEnEquiNum ("Hola a Todos y Todas");
-    printf("Longitud de cadena: %d \n", equiCad);
+    str1[100];
+    int resultado = 0;
+    printf("Ingresa un String : \n");
+    scanf("%[^\n]s",str1);
+    
+    resultado = cadEnEquiNum(str1);
+    printf("\nINT devuelto con la función aplicada : %i\n",resultado);
 
 
     //Prueba Punto c)
