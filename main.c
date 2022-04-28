@@ -17,11 +17,11 @@ int cadEnEquiNum(char cadena[])
 {
     int i = 0;
     int numero = 0;
-    int cadenaNumero[100];
+    int aux = 0;
     while(cadena[i] != '\0'){
         if(cadena[i]>= '0' && cadena[i]<= '9'){
-            cadenaNumero[i] = cadena[i]- 48;
-            numero = (10*numero) + cadenaNumero[i];
+            aux = cadena[i]- 48;
+            numero = (10*numero) + aux;
         }
         i++;
     }
@@ -29,7 +29,7 @@ int cadEnEquiNum(char cadena[])
 } 
 //C) Convertir una cadena de caracteres a la misma cadena con todos sus caracteres en mayúscula.
 
-char convertirMayus (char cadena[]){
+void convertirMayus (char cadena[]){
     int i = 0;
     while(cadena[i] != '\0'){
         if(cadena[i]>= 'a' && cadena[i]<= 'z'){
@@ -41,7 +41,7 @@ char convertirMayus (char cadena[]){
 
 //D) Eliminar de una cadena dada todas las ocurrencias de un carácter dado.
 
-char eliminarCaracter (char cadena[], char crt){
+void eliminarCaracter (char cadena[], char crt){
     int i = 0;
     int j = 0;
     while(cadena[i] != '\0'){
