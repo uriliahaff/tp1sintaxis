@@ -5,7 +5,11 @@
 //A) Calcular y retornar la longitud de una cadena dada.
 int longCadena(char cadena[])
 {
-    return strlen(cadena);
+        int i = 0;
+    while(cadena[i] != '\0'){
+        i++;
+    }
+    return i;
 }
 
 //B) Convertir una cadena de dígitos en su equivalente numérico.
@@ -43,18 +47,33 @@ char eliminarCaracter (char cadena[], char crt){
         i++;
     }
 }
-//Punto e)
+//E)
 
 void conctanearDosCadenas(char *cad1, char cad2[]){
 strcat(cad1, cad2 );
 }
+
+//F) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
+void modificarCadena(char *cad, int posc, char valor){
+        int i = 0;
+
+
+    for( i=0 ; i <= posc ; i++){
+
+        if (i == posc)
+            cad[i] = valor;
+    }
+}
+
 
 int main()
 {
     int cant, equiCad;
     char *cad1="Hola ";
     char cad2[]="Mundo";
-
+    char str1[100];
+    char str2[100];
+    char crt = 'o';
 
     //Prueba Punto a)
     cant = longCadena("Hola a Todos");
@@ -67,7 +86,7 @@ int main()
 
 
     //Prueba Punto c)
-    char str1[100];
+     str1[100];
     printf("Ingresa un String : \n");
     scanf("%[^\n]s",str1);
 
@@ -76,8 +95,8 @@ int main()
 
 
     //Prueba Punto d)
-    char str2[100];
-    char crt = 'o';
+     str2[100];
+     crt = 'o';
 	printf("Ingresa un String : \n");
     scanf("%[^\n]s",str2);
 
@@ -88,5 +107,11 @@ int main()
     //Prueba Punto e)
     conctanearDosCadenas(cad1,cad2);
     printf("Concatenacion de cadenas: %s \n", cad1);
+
+
+    //Prueba Punto f)
+    modificarCadena( cad1, 5, '!');
+    printf("Cambio de caracter en posicion determinada: %s \n", cad1);
+
     return 0;
 }
