@@ -56,10 +56,7 @@ strcat(cad1, cad2 );
 //F) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
 void modificarCadena(char *cad, int posc, char valor){
         int i = 0;
-
-
     for( i=0 ; i <= posc ; i++){
-
         if (i == posc)
             cad[i] = valor;
     }
