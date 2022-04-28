@@ -47,16 +47,32 @@ char eliminarCaracter (char cadena[], char crt){
         i++;
     }
 }
-//E)
+//E Concatenar al final de la primer cadena dada una segunda cadena también dada.
 
-void conctanearDosCadenas(char *cad1, char cad2[]){
-strcat(cad1, cad2 );
+void concatenarDosCadenas(char cad1[], char cad2[], char *cad3)
+{
+int i=0,j=0;
+
+do
+{
+cad3[i]=cad1[i];
+i++;
+}while(cad1[i]!='\0');
+do
+{
+cad3[i]=cad2[j];
+i++;
+j++;
+}while(cad2[j-1]!='\0');
 }
 
 //F) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
 void modificarCadena(char *cad, int posc, char valor){
         int i = 0;
+
+
     for( i=0 ; i <= posc ; i++){
+
         if (i == posc)
             cad[i] = valor;
     }
@@ -68,6 +84,7 @@ int main()
     int cant, equiCad;
     char *cad1="Hola ";
     char cad2[]="Mundo";
+    char *cad3="";
     char str1[100];
     char str2[100];
     char crt = 'o';
@@ -79,7 +96,7 @@ int main()
 
     //Prueba Punto b)
     equiCad = cadEnEquiNum ("Hola a Todos y Todas");
- printf("Longitud de cadena: %d \n", equiCad);
+    printf("Longitud de cadena: %d \n", equiCad);
 
 
     //Prueba Punto c)
@@ -102,8 +119,8 @@ int main()
 
 
     //Prueba Punto e)
-    conctanearDosCadenas(cad1,cad2);
-    printf("Concatenacion de cadenas: %s \n", cad1);
+   concatenarDosCadenas(cad1,cad2,cad3);
+    printf("Concatenacion de cadenas: %s \n", cad3);
 
 
     //Prueba Punto f)
