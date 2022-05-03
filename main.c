@@ -61,31 +61,40 @@ void eliminarCaracter (char cadena[], char crt){
 void concatenarDosCadenas(char cad1[], char cad2[], char *cad3)
 {
 int i=0,j=0;
-
-do
-{
+while(cad1[i]!='\0'){
 cad3[i]=cad1[i];
 i++;
-}while(cad1[i]!='\0');
-do
-{
+}
+while(cad2[j]!='\0'){
 cad3[i]=cad2[j];
 i++;
 j++;
-}while(cad2[j-1]!='\0');
+}
 }
 
 //F) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
-void modificarCadena(char *cad, int posc, char valor){
-        int i = 0;
-
-
-    for( i=0 ; i <= posc ; i++){
-
-        if (i == posc)
-            cad[i] = valor;
-    }
+void modificarCadena(char *cad, int posc, char valor, int long_cadena)
+{
+	int i=0, j=0;
+	char cad_aux[long_cadena]; //cadena auxiliar
+	
+	//copio el contenido en la cadena auxiliar
+	for(i=0; i < long_cadena; i++)
+	{
+		cad_aux[i]= cad[i];
+	}
+	//actualizo la cadena 
+	cad[posc]= valor;
+	//actualizo el indice
+	i=posc;
+	//copio en la cadena lo que falta
+	for( j=posc+1; j<long_cadena ; j++)
+	{
+		cad[j] = cad_aux[i];
+		i++;
+	} 
 }
+
 
 
 int main()
